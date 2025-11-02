@@ -11,13 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NovaPasta\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Shared\CRM.Communication\CRM.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\CRM.Exceptions\CRM.Exceptions.csproj" />
     <ProjectReference Include="..\CRM.Application\CRM.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NovaPasta\" />
   </ItemGroup>
 
 </Project>
