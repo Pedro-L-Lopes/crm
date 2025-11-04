@@ -14,6 +14,7 @@
     <ProjectReference Include="..\..\Shared\CRM.Communication\CRM.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\CRM.Exceptions\CRM.Exceptions.csproj" />
     <ProjectReference Include="..\CRM.Application\CRM.Application.csproj" />
+    <ProjectReference Include="..\CRM.Infrastructure\CRM.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
