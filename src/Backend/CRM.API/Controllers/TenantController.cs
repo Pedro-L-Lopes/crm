@@ -1,4 +1,5 @@
-﻿using CRM.Communication.Requests;
+﻿using CRM.Application.UseCases.Tenant.Register;
+using CRM.Communication.Requests;
 using CRM.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,8 +10,11 @@ public class TenantController : ControllerBase
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterTenantJson), StatusCodes.Status201Created)]
-    public IActionResult Register(RequestRegisterTenantJson request)
+    public async Task<IActionResult> Register([FromBody]RequestRegisterTenantJson request, [FromServices] IRegisterTenantUseCase useCase)
     {
-        return Created();
+
+        var result = await useCase.Execute(request);
+
+        return Created(string.Empty, result);
     }
 }
