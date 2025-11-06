@@ -3,7 +3,7 @@ using CRM.Exceptions;
 using FluentValidation;
 
 namespace CRM.Application.UseCases.Tenant.Register;
-internal class RegisterTenantValidator : AbstractValidator<RequestRegisterTenantJson>
+public class RegisterTenantValidator : AbstractValidator<RequestRegisterTenantJson>
 {
     public RegisterTenantValidator()
     {
