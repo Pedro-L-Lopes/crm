@@ -1,9 +1,12 @@
 ﻿using CRM.Application.Services.Cryptography;
 using CRM.Application.UseCases.User.Register;
 using CRM.Communication.Requests;
+using CRM.Communication.Responses;
+using CRM.Domain.Entities;
 using CRM.Domain.Repositories;
 using CRM.Domain.Repositories.Tenant;
 using CRM.Domain.Repositories.User;
+using CRM.Domain.Security.Tokens;
 using CRM.Exceptions;
 using CRM.Exceptions.ExceptionsBase;
 using Mapster;
@@ -17,18 +20,21 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly ITenantReadOnlyRepository _readOnlyTenantRepository;
     private readonly IUnityOfWork _unityOfWork;
     private readonly PasswordEncripter _passwordEncripter;
+    private readonly IAccessTokenGenerator _accessToken;
 
     public RegisterUserUseCase(IUserWriteOnlyRepository writeOnlyRepository, 
                                IUserReadOnlyRepository readOnlyRepository,
                                IUnityOfWork unityOfWork, 
                                PasswordEncripter passwordEncripter,
-                               ITenantReadOnlyRepository readOnlyTenantRepository)
+                               ITenantReadOnlyRepository readOnlyTenantRepository,
+                               IAccessTokenGenerator accessToken)
     {
         _writeOnlyRepository = writeOnlyRepository;
         _readOnlyRepository = readOnlyRepository;
         _passwordEncripter = passwordEncripter;
         _unityOfWork = unityOfWork;
         _readOnlyTenantRepository = readOnlyTenantRepository;
+        _accessToken = accessToken;
     }
 
     public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
@@ -36,17 +42,28 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         await Validate(request);
 
-        var user = request.Adapt<Domain.Entities.User>();
+        var tenant = await _readOnlyTenantRepository.GetTenantById(request.TenantId);
 
+        var user = request.Adapt<Domain.Entities.User>();
         user.Password = _passwordEncripter.Encrypt(request.Password);
+        user.Id = Guid.NewGuid();
 
         await _writeOnlyRepository.Add(user);
-
         await _unityOfWork.commit();
+
+        var token = _accessToken.Generate(user, tenant);
 
         return new ResponseRegisterUserJson
         {
             Name = request.Name,
+            Email = user.Email,
+            TenantName = tenant.Name,
+            TenantType = tenant.Type,
+            PlanExpiration = tenant.PlanExpiration,
+            Tokens = new ReponseTokenJson
+            {
+                AccessToken = token
+            }
         };
     }
 

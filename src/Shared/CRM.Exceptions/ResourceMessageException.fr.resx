@@ -138,6 +138,10 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>L'email fourni est invalide</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EMAIL_OR_PASSWORD_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="INVALID_TENANT" xml:space="preserve">
     <value>Organisation invalide</value>
   </data>
@@ -147,7 +151,6 @@
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>Le nom doit comporter au moins 3 caractères</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="PASSWORD_LENGTH" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -168,6 +171,9 @@
   </data>
   <data name="PLAN_ID_EMPTY" xml:space="preserve">
     <value>Le plan sélectionné est requis</value>
+  </data>
+  <data name="PLAN_NOT_FOUND_OR_INACTIVE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="ROLE_MUST_BE" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />

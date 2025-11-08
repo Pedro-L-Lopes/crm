@@ -7,5 +7,6 @@ public class RequestRegisterUserJson
     public string Password { get; set; } = string.Empty;
     public string ConfirmPassword { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;
-    public Boolean IsActive { get; set; } = false;
+    public DateTime LastLogin {  get; set; }
+    public Boolean IsActive { get; set; } = true;
 }

@@ -124,6 +124,15 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a E-mail or password invalid.
+        /// </summary>
+        public static string EMAIL_OR_PASSWORD_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_OR_PASSWORD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid organization.
         /// </summary>
         public static string INVALID_TENANT {
@@ -214,7 +223,16 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The role must be one of the following: &apos;admin&apos;, &apos;manager&apos;, &apos;agent&apos;, &apos;client&apos;, &apos;financial&apos;, or &apos;assistant&apos;..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Plan not found or inative.
+        /// </summary>
+        public static string PLAN_NOT_FOUND_OR_INACTIVE {
+            get {
+                return ResourceManager.GetString("PLAN_NOT_FOUND_OR_INACTIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The role must be one of the following: &apos;owner&apos;, &apos;admin&apos;, &apos;manager&apos;, &apos;agent&apos;, &apos;client&apos;, &apos;financial&apos;, or &apos;assistant&apos;..
         /// </summary>
         public static string ROLE_MUST_BE {
             get {

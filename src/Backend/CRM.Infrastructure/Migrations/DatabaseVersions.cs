@@ -2,5 +2,5 @@
 
 public abstract class DatabaseVersions
 {
-    public const int TABLE_TENANT_AND_USER = 1;
+    public const int TABLE_TENANT_USER_AND_PLAN = 1;
 }

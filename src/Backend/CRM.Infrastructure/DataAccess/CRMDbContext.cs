@@ -8,6 +8,7 @@ public class CRMDbContext : DbContext
 
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Plan> Plans { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

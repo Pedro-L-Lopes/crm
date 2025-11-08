@@ -1,12 +1,11 @@
-﻿using CRM.Application.UseCases.Tenant.Register;
+﻿using CRM.API.Controllers;
+using CRM.Application.UseCases.Tenant.Register;
 using CRM.Communication.Requests;
 using CRM.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 
-[Route("/[controller]")]
-[ApiController]
-public class TenantController : ControllerBase
+public class TenantController : CRMBaseController
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterTenantJson), StatusCodes.Status201Created)]

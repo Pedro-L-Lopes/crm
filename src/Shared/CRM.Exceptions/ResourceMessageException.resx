@@ -138,6 +138,9 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>The e-mail address invalid</value>
   </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>E-mail or password invalid</value>
+  </data>
   <data name="INVALID_TENANT" xml:space="preserve">
     <value>Invalid organization</value>
   </data>
@@ -168,8 +171,11 @@
   <data name="PLAN_ID_EMPTY" xml:space="preserve">
     <value>The selected plan is required</value>
   </data>
+  <data name="PLAN_NOT_FOUND_OR_INACTIVE" xml:space="preserve">
+    <value>Plan not found or inative</value>
+  </data>
   <data name="ROLE_MUST_BE" xml:space="preserve">
-    <value>The role must be one of the following: 'admin', 'manager', 'agent', 'client', 'financial', or 'assistant'.</value>
+    <value>The role must be one of the following: 'owner', 'admin', 'manager', 'agent', 'client', 'financial', or 'assistant'.</value>
   </data>
   <data name="ROLE_REQUIRED" xml:space="preserve">
     <value>The role is required</value>

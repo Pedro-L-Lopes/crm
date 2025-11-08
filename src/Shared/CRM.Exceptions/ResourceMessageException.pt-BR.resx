@@ -138,6 +138,9 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>O E-mail é inválido</value>
   </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>E-mail e/ou senha inválidos</value>
+  </data>
   <data name="INVALID_TENANT" xml:space="preserve">
     <value>Organização inválida</value>
   </data>
@@ -168,8 +171,11 @@
   <data name="PLAN_ID_EMPTY" xml:space="preserve">
     <value>Selecione um plano</value>
   </data>
+  <data name="PLAN_NOT_FOUND_OR_INACTIVE" xml:space="preserve">
+    <value>O plano selecionado não foi encontrado ou não está ativo.</value>
+  </data>
   <data name="ROLE_MUST_BE" xml:space="preserve">
-    <value>O cargo deve ser um dos seguintes: 'admin', 'manager', 'agent', 'client', 'financial' ou 'assistant'.</value>
+    <value>O cargo deve ser um dos seguintes:  'owner', 'admin', 'manager', 'agent', 'client', 'financial' ou 'assistant'.</value>
   </data>
   <data name="ROLE_REQUIRED" xml:space="preserve">
     <value>O cargo do usuário é obrigatório.</value>

@@ -27,4 +27,13 @@ public class TenantRepository : ITenantWriteOnlyRepository, ITenantReadOnlyRepos
     {
         return await _dbContext.Tenants.AnyAsync(tenant => tenant.Email.Equals(email) && tenant.IsActive);
     }
+
+    public async Task<Tenant?> GetTenantById(Guid id)
+    {
+        var tenant = await _dbContext.Tenants
+            .FirstOrDefaultAsync(t => t.Id == id && t.IsActive);
+
+        return tenant;
+    }
+
 }
