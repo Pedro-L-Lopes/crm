@@ -123,6 +123,12 @@
   <data name="ACCOUNT_TYPE_INVALID" xml:space="preserve">
     <value>O tipo do usuário deve ser 'individual', 'agent' ou 'agency'.</value>
   </data>
+  <data name="AMOUNT_PAID_NEGATIVE" xml:space="preserve">
+    <value>O valor pago não pode ser negativo.</value>
+  </data>
+  <data name="BILLING_CYCLE_INVALID" xml:space="preserve">
+    <value>O ciclo de cobrança é inválido.</value>
+  </data>
   <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
     <value>As senhas não coincidem.</value>
   </data>
@@ -141,14 +147,44 @@
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
     <value>E-mail e/ou senha inválidos</value>
   </data>
+  <data name="END_DATE_AFTER_START_DATE" xml:space="preserve">
+    <value>A data de término deve ser posterior à data de início.</value>
+  </data>
+  <data name="END_DATE_REQUIRED" xml:space="preserve">
+    <value>A data de término é obrigatória.</value>
+  </data>
+  <data name="GENDER_EMPTY" xml:space="preserve">
+    <value>Gênero invalido</value>
+  </data>
+  <data name="GENDER_INVALID" xml:space="preserve">
+    <value>Gênero invalido</value>
+  </data>
+  <data name="INACTIVE_PLAN" xml:space="preserve">
+    <value>Plano inativo</value>
+  </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Senha invalida</value>
+  </data>
   <data name="INVALID_TENANT" xml:space="preserve">
     <value>Organização inválida</value>
+  </data>
+  <data name="INVOICE_URL_MAX_LENGTH_EXCEEDED" xml:space="preserve">
+    <value>A URL da fatura deve ter no máximo 255 caracteres.</value>
   </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>O nome não pode estar vazio</value>
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>O nome não pode ter menos de 3 caracteres e não pode ter mais de 50.</value>
+  </data>
+  <data name="NO_TOKEN" xml:space="preserve">
+    <value>Sem token de acesso</value>
+  </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>A senha é diferente da senha atual</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>A senha não pode ser vazia</value>
   </data>
   <data name="PASSWORD_LENGTH" xml:space="preserve">
     <value>A senha deve ter pelo menos 6 caracteres.</value>
@@ -165,6 +201,18 @@
   <data name="PASSWORD_RULE_3" xml:space="preserve">
     <value>A senha deve conter ao menos um número.</value>
   </data>
+  <data name="PAYMENT_METHOD_INVALID" xml:space="preserve">
+    <value>O método de pagamento é inválido.</value>
+  </data>
+  <data name="PAYMENT_STATUS_INVALID" xml:space="preserve">
+    <value> status de pagamento é inválido.</value>
+  </data>
+  <data name="PHONE_EMPTY" xml:space="preserve">
+    <value>O telefone não pode ficar vazio</value>
+  </data>
+  <data name="PHONE_INVALID" xml:space="preserve">
+    <value>Número de telefone inválido</value>
+  </data>
   <data name="PHONE_MAX_LENTH" xml:space="preserve">
     <value>O número não pode ter mais de 14 dígitos</value>
   </data>
@@ -174,16 +222,25 @@
   <data name="PLAN_NOT_FOUND_OR_INACTIVE" xml:space="preserve">
     <value>O plano selecionado não foi encontrado ou não está ativo.</value>
   </data>
+  <data name="PLAN_STATUS_INVALID" xml:space="preserve">
+    <value>O status do plano é inválido.</value>
+  </data>
   <data name="ROLE_MUST_BE" xml:space="preserve">
     <value>O cargo deve ser um dos seguintes:  'owner', 'admin', 'manager', 'agent', 'client', 'financial' ou 'assistant'.</value>
   </data>
   <data name="ROLE_REQUIRED" xml:space="preserve">
     <value>O cargo do usuário é obrigatório.</value>
   </data>
+  <data name="START_DATE_REQUIRED" xml:space="preserve">
+    <value>A data de início é obrigatória.</value>
+  </data>
   <data name="TENANT_REQUIRED" xml:space="preserve">
     <value>O usuário precisa estar associado a um tenant.</value>
   </data>
   <data name="UNKNOW_ERROR" xml:space="preserve">
     <value>Erro desconhecido</value>
+  </data>
+  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
+    <value>Usuário sem permissão para acessar esse recurso</value>
   </data>
 </root>

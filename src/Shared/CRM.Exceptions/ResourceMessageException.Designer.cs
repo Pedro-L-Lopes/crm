@@ -79,6 +79,24 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Amount paid cannot be negative..
+        /// </summary>
+        public static string AMOUNT_PAID_NEGATIVE {
+            get {
+                return ResourceManager.GetString("AMOUNT_PAID_NEGATIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Billing cycle is invalid..
+        /// </summary>
+        public static string BILLING_CYCLE_INVALID {
+            get {
+                return ResourceManager.GetString("BILLING_CYCLE_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The passwords do not match..
         /// </summary>
         public static string CONFIRM_PASSWORD_MATCH {
@@ -133,11 +151,74 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a End date must be after the start date..
+        /// </summary>
+        public static string END_DATE_AFTER_START_DATE {
+            get {
+                return ResourceManager.GetString("END_DATE_AFTER_START_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a End date is required..
+        /// </summary>
+        public static string END_DATE_REQUIRED {
+            get {
+                return ResourceManager.GetString("END_DATE_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The gender cannot be empty.
+        /// </summary>
+        public static string GENDER_EMPTY {
+            get {
+                return ResourceManager.GetString("GENDER_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid gender.
+        /// </summary>
+        public static string GENDER_INVALID {
+            get {
+                return ResourceManager.GetString("GENDER_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Inactive plan.
+        /// </summary>
+        public static string INACTIVE_PLAN {
+            get {
+                return ResourceManager.GetString("INACTIVE_PLAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid password.
+        /// </summary>
+        public static string INVALID_PASSWORD {
+            get {
+                return ResourceManager.GetString("INVALID_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid organization.
         /// </summary>
         public static string INVALID_TENANT {
             get {
                 return ResourceManager.GetString("INVALID_TENANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invoice URL must be at most 255 characters long..
+        /// </summary>
+        public static string INVOICE_URL_MAX_LENGTH_EXCEEDED {
+            get {
+                return ResourceManager.GetString("INVOICE_URL_MAX_LENGTH_EXCEEDED", resourceCulture);
             }
         }
         
@@ -156,6 +237,33 @@ namespace CRM.Exceptions {
         public static string NAME_LENGTH {
             get {
                 return ResourceManager.GetString("NAME_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No access token.
+        /// </summary>
+        public static string NO_TOKEN {
+            get {
+                return ResourceManager.GetString("NO_TOKEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Password different of current password.
+        /// </summary>
+        public static string PASSWORD_DIFFERENT_CURRENT_PASSWORD {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFFERENT_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Password empty.
+        /// </summary>
+        public static string PASSWORD_EMPTY {
+            get {
+                return ResourceManager.GetString("PASSWORD_EMPTY", resourceCulture);
             }
         }
         
@@ -205,6 +313,42 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Payment method is invalid..
+        /// </summary>
+        public static string PAYMENT_METHOD_INVALID {
+            get {
+                return ResourceManager.GetString("PAYMENT_METHOD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Payment status is invalid..
+        /// </summary>
+        public static string PAYMENT_STATUS_INVALID {
+            get {
+                return ResourceManager.GetString("PAYMENT_STATUS_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The phone number cannot be empty.
+        /// </summary>
+        public static string PHONE_EMPTY {
+            get {
+                return ResourceManager.GetString("PHONE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Phone invalid.
+        /// </summary>
+        public static string PHONE_INVALID {
+            get {
+                return ResourceManager.GetString("PHONE_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The number cannot have more than 14 digits..
         /// </summary>
         public static string PHONE_MAX_LENTH {
@@ -232,6 +376,15 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Plan status is invalid..
+        /// </summary>
+        public static string PLAN_STATUS_INVALID {
+            get {
+                return ResourceManager.GetString("PLAN_STATUS_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The role must be one of the following: &apos;owner&apos;, &apos;admin&apos;, &apos;manager&apos;, &apos;agent&apos;, &apos;client&apos;, &apos;financial&apos;, or &apos;assistant&apos;..
         /// </summary>
         public static string ROLE_MUST_BE {
@@ -250,6 +403,15 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Start date is required..
+        /// </summary>
+        public static string START_DATE_REQUIRED {
+            get {
+                return ResourceManager.GetString("START_DATE_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The user needs to be associated with a tenant..
         /// </summary>
         public static string TENANT_REQUIRED {
@@ -264,6 +426,15 @@ namespace CRM.Exceptions {
         public static string UNKNOW_ERROR {
             get {
                 return ResourceManager.GetString("UNKNOW_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a User without permission to access this resource.
+        /// </summary>
+        public static string USER_WITHOUT_PERMISSION_ACCESS_RESOURCE {
+            get {
+                return ResourceManager.GetString("USER_WITHOUT_PERMISSION_ACCESS_RESOURCE", resourceCulture);
             }
         }
     }

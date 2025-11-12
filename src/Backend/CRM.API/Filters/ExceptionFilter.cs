@@ -63,11 +63,8 @@ public class ExceptionFilter : IExceptionFilter
     {
         context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-#if DEBUG
         context.Result = new ObjectResult(new ResponseErrorJson(new[] { context.Exception.Message }));
-#else
-        context.Result = new ObjectResult(new ResponseErrorJson(ResourceMessageException.UNKNOW_ERROR));
-#endif
+
     }
 }
 

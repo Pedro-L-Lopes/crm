@@ -1,12 +1,14 @@
-﻿using System.Security.Cryptography;
+﻿using CRM.Domain.Security.Cryptography;
+using System.Security.Cryptography;
 using System.Text;
 
-namespace CRM.Application.Services.Cryptography;
-public class PasswordEncripter
+namespace CRM.Infrastructure.Security.Cryptography;
+
+public class BCryptNet : IPasswordEncripter
 {
     public readonly string _addiotionalKey;
 
-    public PasswordEncripter(string addiotionalKey)
+    public BCryptNet(string addiotionalKey)
     {
         _addiotionalKey = addiotionalKey;
     }
@@ -24,7 +26,7 @@ public class PasswordEncripter
     private static string StringBytes(byte[] bytes)
     {
         var sb = new StringBuilder();
-        foreach(byte b in bytes)
+        foreach (byte b in bytes)
         {
             var hex = b.ToString("x2");
             sb.Append(hex);

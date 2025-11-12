@@ -1,11 +1,11 @@
-﻿using CRM.Application.Services.Cryptography;
-using CRM.Application.UseCases.User.Register;
+﻿using CRM.Application.UseCases.User.Register;
 using CRM.Communication.Requests;
 using CRM.Communication.Responses;
-using CRM.Domain.Entities;
 using CRM.Domain.Repositories;
+using CRM.Domain.Repositories.Plan;
 using CRM.Domain.Repositories.Tenant;
 using CRM.Domain.Repositories.User;
+using CRM.Domain.Security.Cryptography;
 using CRM.Domain.Security.Tokens;
 using CRM.Exceptions;
 using CRM.Exceptions.ExceptionsBase;
@@ -18,16 +18,18 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly IUserWriteOnlyRepository _writeOnlyRepository;
     private readonly IUserReadOnlyRepository _readOnlyRepository;
     private readonly ITenantReadOnlyRepository _readOnlyTenantRepository;
+    private readonly IPlanReadOnlyRepository _readOnlyPlanRepository;
     private readonly IUnityOfWork _unityOfWork;
-    private readonly PasswordEncripter _passwordEncripter;
+    private readonly IPasswordEncripter _passwordEncripter;
     private readonly IAccessTokenGenerator _accessToken;
 
     public RegisterUserUseCase(IUserWriteOnlyRepository writeOnlyRepository, 
                                IUserReadOnlyRepository readOnlyRepository,
                                IUnityOfWork unityOfWork, 
-                               PasswordEncripter passwordEncripter,
+                               IPasswordEncripter passwordEncripter,
                                ITenantReadOnlyRepository readOnlyTenantRepository,
-                               IAccessTokenGenerator accessToken)
+                               IAccessTokenGenerator accessToken,
+                               IPlanReadOnlyRepository readOnlyPlanRepository)
     {
         _writeOnlyRepository = writeOnlyRepository;
         _readOnlyRepository = readOnlyRepository;
@@ -35,6 +37,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         _unityOfWork = unityOfWork;
         _readOnlyTenantRepository = readOnlyTenantRepository;
         _accessToken = accessToken;
+        _readOnlyPlanRepository = readOnlyPlanRepository;
     }
 
     public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
@@ -44,14 +47,19 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         var tenant = await _readOnlyTenantRepository.GetTenantById(request.TenantId);
 
+        if (tenant.PlanId == Guid.Empty)
+            throw new ErrorOnValidationException(["Tenant não possui plano ativo."]);
+
         var user = request.Adapt<Domain.Entities.User>();
         user.Password = _passwordEncripter.Encrypt(request.Password);
         user.Id = Guid.NewGuid();
 
-        await _writeOnlyRepository.Add(user);
-        await _unityOfWork.commit();
+        var plan = await _readOnlyPlanRepository.GetPlanById(tenant.PlanId);
 
-        var token = _accessToken.Generate(user, tenant);
+        await _writeOnlyRepository.Add(user);
+        await _unityOfWork.Commit();
+
+        var token = _accessToken.Generate(user, tenant, plan);
 
         return new ResponseRegisterUserJson
         {

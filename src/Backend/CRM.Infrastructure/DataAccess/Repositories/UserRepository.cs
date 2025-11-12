@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Infrastructure.DataAccess.Repositories;
 
-public class UserRepository : IUserWriteOnlyRepository, IUserReadOnlyRepository
+public class UserRepository : IUserWriteOnlyRepository, IUserReadOnlyRepository, IUserUpdateOnlyRepository
 {
     private readonly CRMDbContext _dbContext;
 
@@ -30,4 +30,33 @@ public class UserRepository : IUserWriteOnlyRepository, IUserReadOnlyRepository
                 .AsNoTracking()
                 .FirstOrDefaultAsync(user => user.IsActive && user.Email.Equals(email) && user.Password.Equals(password));
     }
+
+    public async Task<User?> GetUserById(Guid id)
+    {
+        return await _dbContext
+                .Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(user => user.IsActive && user.Id.Equals(id));
+    }
+
+    public async Task<bool> ExistsUserActiveWithIdentifier(Guid id)
+    {
+        return await _dbContext.Users.AnyAsync(user => user.Id.Equals(id) && user.IsActive);
+    }
+
+    public async Task<User?> GetUserByIdentifier(Guid id)
+    {
+        return await _dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(user => user.Id.Equals(id) && user.IsActive);
+    }
+
+    public async Task<User> GetById(Guid id)
+    {
+        return await _dbContext
+            .Users
+            .FirstAsync(user => user.Id == id);
+    }
+
+    public void Update(User user) => _dbContext.Users.Update(user);
 }

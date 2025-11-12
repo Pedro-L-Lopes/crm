@@ -32,7 +32,7 @@ public class RegisterPlanUseCase : IRegisterPlanUseCase
         plan.IsActive = true;
 
         await _writeOnlyRepository.Add(plan);
-        await _unityOfWork.commit();
+        await _unityOfWork.Commit();
 
         return plan.Adapt<ResponseRegisterPlanJson>();
     }

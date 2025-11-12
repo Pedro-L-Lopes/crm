@@ -123,6 +123,13 @@
   <data name="ACCOUNT_TYPE_INVALID" xml:space="preserve">
     <value>Le type d'utilisateur doit être 'individual', 'agent' ou 'agency'</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AMOUNT_PAID_NEGATIVE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BILLING_CYCLE_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
     <value>Les mots de passe ne correspondent pas.</value>
   </data>
@@ -138,18 +145,47 @@
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>L'email fourni est invalide</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="EMAIL_OR_PASSWORD_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="END_DATE_AFTER_START_DATE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="END_DATE_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GENDER_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GENDER_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="INACTIVE_PLAN" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="INVALID_PASSWORD" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="INVALID_TENANT" xml:space="preserve">
     <value>Organisation invalide</value>
+  </data>
+  <data name="INVOICE_URL_MAX_LENGTH_EXCEEDED" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>Le nom ne peut pas être vide</value>
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>Le nom doit comporter au moins 3 caractères</value>
+  </data>
+  <data name="NO_TOKEN" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PASSWORD_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="PASSWORD_LENGTH" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -166,6 +202,18 @@
   <data name="PASSWORD_RULE_3" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="PAYMENT_METHOD_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PAYMENT_STATUS_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PHONE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PHONE_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="PHONE_MAX_LENTH" xml:space="preserve">
     <value>Le nombre ne peut pas comporter plus de 14 chiffres.</value>
   </data>
@@ -175,16 +223,25 @@
   <data name="PLAN_NOT_FOUND_OR_INACTIVE" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="PLAN_STATUS_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="ROLE_MUST_BE" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="ROLE_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="START_DATE_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="TENANT_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="UNKNOW_ERROR" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
 </root>

@@ -10,5 +10,10 @@ public class TenantConfiguration : IEntityTypeConfiguration<Tenant>
     {
         builder.Property(t => t.Cycle)
             .HasConversion<string>();
+
+        builder.HasOne(t => t.Plan)
+               .WithMany()
+               .HasForeignKey(t => t.PlanId)
+               .OnDelete(DeleteBehavior.Restrict);
     }
 }

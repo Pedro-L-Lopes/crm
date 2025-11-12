@@ -1,4 +1,6 @@
-﻿namespace CRM.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CRM.Domain.Entities;
 
 public class User : EntityBase
 {
@@ -10,4 +12,9 @@ public class User : EntityBase
     public string Role { get; set; } = string.Empty;
     public DateTime LastLogin { get; set; }
     public bool IsActive { get; set; } = false;
+    public bool TwoFactorEnabled { get; set; } = false;
+    public string? Gender { get; set; }
+
+    [ForeignKey("TenantId")]
+    public Tenant? Tenant { get; set; }
 }

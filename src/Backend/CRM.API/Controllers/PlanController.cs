@@ -1,4 +1,5 @@
 ﻿using Azure;
+using CRM.API.Attributes;
 using CRM.Application.UseCases.Plan.Get;
 using CRM.Application.UseCases.Plan.Register;
 using CRM.Communication.Requests;
@@ -9,6 +10,7 @@ namespace CRM.API.Controllers;
 
 public class PlanController : CRMBaseController
 {
+    [AuthenticatedUser]
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterPlanJson), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseRegisterPlanJson), StatusCodes.Status400BadRequest)]

@@ -1,4 +1,5 @@
-﻿using CRM.Communication.Requests;
+﻿using CRM.Application.SharedValidators;
+using CRM.Communication.Requests;
 using CRM.Exceptions;
 using FluentValidation;
 
@@ -24,14 +25,7 @@ public class RegisterUserValidator : AbstractValidator<RequestRegisterUserJson>
             .EmailAddress()
             .WithMessage(ResourceMessageException.EMAIL_INVALID);
 
-        RuleFor(t => t.Password)
-            .NotEmpty()
-            .WithMessage(ResourceMessageException.PASSWORD_REQUIRED)
-            .MinimumLength(6)
-            .WithMessage(ResourceMessageException.PASSWORD_LENGTH)
-            .Matches("[A-Z]").WithMessage(ResourceMessageException.PASSWORD_RULE_1)
-            .Matches("[a-z]").WithMessage(ResourceMessageException.PASSWORD_RULE_2)
-            .Matches("[0-9]").WithMessage(ResourceMessageException.PASSWORD_RULE_3);
+        RuleFor(t => t.Password).SetValidator(new PasswordValidator<RequestRegisterUserJson>());
 
         RuleFor(t => t.ConfirmPassword)
             .NotEmpty()

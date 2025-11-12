@@ -8,6 +8,6 @@ namespace CRM.Infrastructure.DataAccess
         private readonly CRMDbContext _dbContext;
         public UnityOfWork(CRMDbContext dbContext) => _dbContext = dbContext;
 
-        public async Task commit() => await _dbContext.SaveChangesAsync();
+        public async Task Commit() => await _dbContext.SaveChangesAsync();
     }
 }
