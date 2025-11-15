@@ -130,6 +130,9 @@
   <data name="BILLING_CYCLE_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="CITY_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
     <value>Les mots de passe ne correspondent pas.</value>
   </data>
@@ -177,6 +180,12 @@
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>Le nom doit comporter au moins 3 caractères</value>
+  </data>
+  <data name="NEIGHBORHOOD" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NEIGHBORHOO_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="NO_TOKEN" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -235,6 +244,9 @@
   <data name="START_DATE_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
+  <data name="STREET_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="TENANT_REQUIRED" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -242,6 +254,48 @@
     <value />
   </data>
   <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ZIPCODE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="STATE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DOCUMENT_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CLIENT_TYPE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="AGENT_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PROPERTY_TYPE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PROPERTY_PURPOSE_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PROPERTY_STATUS_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PRICE_INVALID" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PROPERTY_ID_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PLATFORM_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="LINK_INVALID" xml:space="preserve">
+    <value>Link must be a valid URL</value>
+  </data>
+  <data name="CLIENT_ID_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="STATUS_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
 </root>

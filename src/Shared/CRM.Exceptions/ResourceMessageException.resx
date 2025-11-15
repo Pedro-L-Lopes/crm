@@ -129,6 +129,9 @@
   <data name="BILLING_CYCLE_INVALID" xml:space="preserve">
     <value>Billing cycle is invalid.</value>
   </data>
+  <data name="CITY_EMPTY" xml:space="preserve">
+    <value>City cannot be empty</value>
+  </data>
   <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
     <value>The passwords do not match.</value>
   </data>
@@ -176,6 +179,12 @@
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>The name cannot have fewer than 3 characters and cannot have more than 50.</value>
+  </data>
+  <data name="NEIGHBORHOOD" xml:space="preserve">
+    <value>Neighborhood cannot be empty</value>
+  </data>
+  <data name="NEIGHBORHOO_EMPTY" xml:space="preserve">
+    <value>Neighborhood cannot be empty</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
     <value>No access token</value>
@@ -234,6 +243,9 @@
   <data name="START_DATE_REQUIRED" xml:space="preserve">
     <value>Start date is required.</value>
   </data>
+  <data name="STREET_EMPTY" xml:space="preserve">
+    <value>Street cannot be empty</value>
+  </data>
   <data name="TENANT_REQUIRED" xml:space="preserve">
     <value>The user needs to be associated with a tenant.</value>
   </data>
@@ -242,5 +254,47 @@
   </data>
   <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
     <value>User without permission to access this resource</value>
+  </data>
+  <data name="ZIPCODE_EMPTY" xml:space="preserve">
+    <value>ZipCode cannot be empty</value>
+  </data>
+  <data name="STATE_EMPTY" xml:space="preserve">
+    <value>State cannot be empty</value>
+  </data>
+  <data name="DOCUMENT_EMPTY" xml:space="preserve">
+    <value>Document cannot be empty</value>
+  </data>
+  <data name="CLIENT_TYPE_EMPTY" xml:space="preserve">
+    <value>Invalid client type</value>
+  </data>
+  <data name="AGENT_EMPTY" xml:space="preserve">
+    <value>AgentI cannot be empty</value>
+  </data>
+  <data name="PROPERTY_TYPE_EMPTY" xml:space="preserve">
+    <value>Property type cannot be empty</value>
+  </data>
+  <data name="PROPERTY_PURPOSE_EMPTY" xml:space="preserve">
+    <value>Purpose cannot be empty</value>
+  </data>
+  <data name="PROPERTY_STATUS_EMPTY" xml:space="preserve">
+    <value>Status cannot be empty</value>
+  </data>
+  <data name="PRICE_INVALID" xml:space="preserve">
+    <value>Price must be greater than zero</value>
+  </data>
+  <data name="PROPERTY_ID_EMPTY" xml:space="preserve">
+    <value>PropertyId cannot be empty</value>
+  </data>
+  <data name="PLATFORM_EMPTY" xml:space="preserve">
+    <value>Platform cannot be empty</value>
+  </data>
+  <data name="LINK_INVALID" xml:space="preserve">
+    <value>Link empty</value>
+  </data>
+  <data name="CLIENT_ID_EMPTY" xml:space="preserve">
+    <value>ClientId cannot be empty</value>
+  </data>
+  <data name="STATUS_EMPTY" xml:space="preserve">
+    <value>Status cannot be empty</value>
   </data>
 </root>

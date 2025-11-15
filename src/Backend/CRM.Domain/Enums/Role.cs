@@ -2,12 +2,10 @@
 
 public enum Role
 {
+    superAdmin = 0,
     owner = 1,
     admin = 2,
-    user = 3,
-    manager = 4,
-    agent = 5,
-    client = 6,
-    financial = 7,
-    assistant = 8,
+    agent = 3,
+    financial = 4,
+    assistant = 5,
 }

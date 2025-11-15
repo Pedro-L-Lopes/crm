@@ -129,6 +129,9 @@
   <data name="BILLING_CYCLE_INVALID" xml:space="preserve">
     <value>O ciclo de cobrança é inválido.</value>
   </data>
+  <data name="CITY_EMPTY" xml:space="preserve">
+    <value>A cidade não pode ser vazia</value>
+  </data>
   <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
     <value>As senhas não coincidem.</value>
   </data>
@@ -176,6 +179,12 @@
   </data>
   <data name="NAME_LENGTH" xml:space="preserve">
     <value>O nome não pode ter menos de 3 caracteres e não pode ter mais de 50.</value>
+  </data>
+  <data name="NEIGHBORHOOD" xml:space="preserve">
+    <value>O bairro não pode ser vazio</value>
+  </data>
+  <data name="NEIGHBORHOO_EMPTY" xml:space="preserve">
+    <value>O bairro não pode ser vazio</value>
   </data>
   <data name="NO_TOKEN" xml:space="preserve">
     <value>Sem token de acesso</value>
@@ -234,6 +243,9 @@
   <data name="START_DATE_REQUIRED" xml:space="preserve">
     <value>A data de início é obrigatória.</value>
   </data>
+  <data name="STREET_EMPTY" xml:space="preserve">
+    <value>A rua não pode ser vazia</value>
+  </data>
   <data name="TENANT_REQUIRED" xml:space="preserve">
     <value>O usuário precisa estar associado a um tenant.</value>
   </data>
@@ -242,5 +254,48 @@
   </data>
   <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
     <value>Usuário sem permissão para acessar esse recurso</value>
+  </data>
+  <data name="ZIPCODE_EMPTY" xml:space="preserve">
+    <value>CEP não pode ser vazio</value>
+  </data>
+  <data name="STATE_EMPTY" xml:space="preserve">
+    <value>O Estado não pode ser vazio</value>
+  </data>
+  <data name="DOCUMENT_EMPTY" xml:space="preserve">
+    <value>Documento não pode ser vazio</value>
+  </data>
+  <data name="CLIENT_TYPE_EMPTY" xml:space="preserve">
+    <value>Tipo de cliente inválido</value>
+  </data>
+  <data name="AGENT_EMPTY" xml:space="preserve">
+    <value>Selecione um corretor</value>
+  </data>
+  <data name="PROPERTY_TYPE_EMPTY" xml:space="preserve">
+    <value>Tipo do imóvel não pode ser vazio</value>
+  </data>
+  <data name="PROPERTY_PURPOSE_EMPTY" xml:space="preserve">
+    <value>Finalidade não pode ser vazia</value>
+  </data>
+  <data name="PROPERTY_STATUS_EMPTY" xml:space="preserve">
+    <value>Status não pode ser vazio</value>
+  </data>
+  <data name="PRICE_INVALID" xml:space="preserve">
+    <value>Preço deve ser maior que zero</value>
+  </data>
+  <data name="PROPERTY_ID_EMPTY" xml:space="preserve">
+    <value>O imóvel não pode ficar vazio</value>
+  </data>
+  <data name="PLATFORM_EMPTY" xml:space="preserve">
+    <value>Plataforma não pode ser vazia</value>
+  </data>
+  <data name="LINK_INVALID" xml:space="preserve">
+    <value>O link deve ser uma URL válida</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CLIENT_ID_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="STATUS_EMPTY" xml:space="preserve">
+    <value>Defina um status valido</value>
   </data>
 </root>

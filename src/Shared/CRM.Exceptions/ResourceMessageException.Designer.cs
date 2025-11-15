@@ -79,6 +79,15 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a AgentI cannot be empty.
+        /// </summary>
+        public static string AGENT_EMPTY {
+            get {
+                return ResourceManager.GetString("AGENT_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Amount paid cannot be negative..
         /// </summary>
         public static string AMOUNT_PAID_NEGATIVE {
@@ -97,6 +106,33 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a City cannot be empty.
+        /// </summary>
+        public static string CITY_EMPTY {
+            get {
+                return ResourceManager.GetString("CITY_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ClientId cannot be empty.
+        /// </summary>
+        public static string CLIENT_ID_EMPTY {
+            get {
+                return ResourceManager.GetString("CLIENT_ID_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid client type.
+        /// </summary>
+        public static string CLIENT_TYPE_EMPTY {
+            get {
+                return ResourceManager.GetString("CLIENT_TYPE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The passwords do not match..
         /// </summary>
         public static string CONFIRM_PASSWORD_MATCH {
@@ -111,6 +147,15 @@ namespace CRM.Exceptions {
         public static string CONFIRM_PASSWORD_REQUIRED {
             get {
                 return ResourceManager.GetString("CONFIRM_PASSWORD_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Document cannot be empty.
+        /// </summary>
+        public static string DOCUMENT_EMPTY {
+            get {
+                return ResourceManager.GetString("DOCUMENT_EMPTY", resourceCulture);
             }
         }
         
@@ -223,6 +268,15 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Link empty.
+        /// </summary>
+        public static string LINK_INVALID {
+            get {
+                return ResourceManager.GetString("LINK_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The name cannot be empty.
         /// </summary>
         public static string NAME_EMPTY {
@@ -237,6 +291,24 @@ namespace CRM.Exceptions {
         public static string NAME_LENGTH {
             get {
                 return ResourceManager.GetString("NAME_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Neighborhood cannot be empty.
+        /// </summary>
+        public static string NEIGHBORHOO_EMPTY {
+            get {
+                return ResourceManager.GetString("NEIGHBORHOO_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Neighborhood cannot be empty.
+        /// </summary>
+        public static string NEIGHBORHOOD {
+            get {
+                return ResourceManager.GetString("NEIGHBORHOOD", resourceCulture);
             }
         }
         
@@ -385,6 +457,60 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Platform cannot be empty.
+        /// </summary>
+        public static string PLATFORM_EMPTY {
+            get {
+                return ResourceManager.GetString("PLATFORM_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Price must be greater than zero.
+        /// </summary>
+        public static string PRICE_INVALID {
+            get {
+                return ResourceManager.GetString("PRICE_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PropertyId cannot be empty.
+        /// </summary>
+        public static string PROPERTY_ID_EMPTY {
+            get {
+                return ResourceManager.GetString("PROPERTY_ID_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Purpose cannot be empty.
+        /// </summary>
+        public static string PROPERTY_PURPOSE_EMPTY {
+            get {
+                return ResourceManager.GetString("PROPERTY_PURPOSE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Status cannot be empty.
+        /// </summary>
+        public static string PROPERTY_STATUS_EMPTY {
+            get {
+                return ResourceManager.GetString("PROPERTY_STATUS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Property type cannot be empty.
+        /// </summary>
+        public static string PROPERTY_TYPE_EMPTY {
+            get {
+                return ResourceManager.GetString("PROPERTY_TYPE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The role must be one of the following: &apos;owner&apos;, &apos;admin&apos;, &apos;manager&apos;, &apos;agent&apos;, &apos;client&apos;, &apos;financial&apos;, or &apos;assistant&apos;..
         /// </summary>
         public static string ROLE_MUST_BE {
@@ -412,6 +538,33 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a State cannot be empty.
+        /// </summary>
+        public static string STATE_EMPTY {
+            get {
+                return ResourceManager.GetString("STATE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Status cannot be empty.
+        /// </summary>
+        public static string STATUS_EMPTY {
+            get {
+                return ResourceManager.GetString("STATUS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Street cannot be empty.
+        /// </summary>
+        public static string STREET_EMPTY {
+            get {
+                return ResourceManager.GetString("STREET_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The user needs to be associated with a tenant..
         /// </summary>
         public static string TENANT_REQUIRED {
@@ -435,6 +588,15 @@ namespace CRM.Exceptions {
         public static string USER_WITHOUT_PERMISSION_ACCESS_RESOURCE {
             get {
                 return ResourceManager.GetString("USER_WITHOUT_PERMISSION_ACCESS_RESOURCE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ZipCode cannot be empty.
+        /// </summary>
+        public static string ZIPCODE_EMPTY {
+            get {
+                return ResourceManager.GetString("ZIPCODE_EMPTY", resourceCulture);
             }
         }
     }
