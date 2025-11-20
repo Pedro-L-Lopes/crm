@@ -115,11 +115,29 @@ namespace CRM.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Client alredy exists with this document.
+        /// </summary>
+        public static string CLIENT_ALREDY_EXISTS {
+            get {
+                return ResourceManager.GetString("CLIENT_ALREDY_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a ClientId cannot be empty.
         /// </summary>
         public static string CLIENT_ID_EMPTY {
             get {
                 return ResourceManager.GetString("CLIENT_ID_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Client not found.
+        /// </summary>
+        public static string CLIENT_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("CLIENT_NOT_FOUND", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace CRM.Exceptions {
         public static string INVALID_TENANT {
             get {
                 return ResourceManager.GetString("INVALID_TENANT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Invalid or inactive organization.
+        /// </summary>
+        public static string INVALID_TENANT_OR_INACTIVE {
+            get {
+                return ResourceManager.GetString("INVALID_TENANT_OR_INACTIVE", resourceCulture);
             }
         }
         
@@ -579,6 +606,15 @@ namespace CRM.Exceptions {
         public static string UNKNOW_ERROR {
             get {
                 return ResourceManager.GetString("UNKNOW_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a User not found or disabled..
+        /// </summary>
+        public static string USER_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("USER_NOT_FOUND", resourceCulture);
             }
         }
         

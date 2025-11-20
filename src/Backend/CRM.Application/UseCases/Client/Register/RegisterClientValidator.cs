@@ -3,11 +3,11 @@ using CRM.Domain.Enums;
 using CRM.Exceptions;
 using FluentValidation;
 
-namespace CRM.Application.UseCases.Client;
+namespace CRM.Application.UseCases.Client.Register;
 
-public class ClientValidator : AbstractValidator<RequestClientJson>
+public class RegisterClientValidator : AbstractValidator<RequestClientJson>
 {
-    public ClientValidator()
+    public RegisterClientValidator()
     {
         RuleFor(c => c.Name)
             .NotEmpty()
@@ -31,9 +31,9 @@ public class ClientValidator : AbstractValidator<RequestClientJson>
 
         RuleFor(c => c.Type)
             .NotEmpty()
-            .WithMessage(ResourceMessageException.CLIENT_TYPE_EMPTY)
-            .IsInEnum()
             .WithMessage(ResourceMessageException.CLIENT_TYPE_EMPTY);
+            //.IsInEnum()
+            //.WithMessage(ResourceMessageException.CLIENT_TYPE_EMPTY);
 
         RuleFor(c => c.TenantId)
             .NotEmpty()

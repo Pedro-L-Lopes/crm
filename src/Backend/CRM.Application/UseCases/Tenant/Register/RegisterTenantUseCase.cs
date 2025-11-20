@@ -36,25 +36,21 @@ public class RegisterTenantUseCase : IRegisterTenantUseCase
 
     public async Task<ResponseRegisterTenantJson> Execute(RequestRegisterTenantJson request)
     {
-        await ValidateBusinessRules(request);
+        await Validate(request);
 
-        // 🔹 Busca e valida o plano selecionado
         var plan = await _getPlanAndValidateUseCase.Execute(request.PlanId);
 
-        // 🔹 Cria o tenant (SEM CurrentPlanHistoryId por enquanto)
         var tenant = request.Adapt<Domain.Entities.Tenant>();
         tenant.Id = Guid.NewGuid();
         tenant.PlanId = plan.Id;
         tenant.Cycle = request.Cycle;
         tenant.PlanExpiration = CalculateExpiryDate(plan.Type, request.Cycle);
-        tenant.CurrentPlanHistoryId = null; // ✅ Deixa nulo para evitar dependência circular
+        tenant.CurrentPlanHistoryId = null;
 
         await _writeOnlyRepository.Add(tenant);
 
-        // ✅ PRIMEIRO COMMIT: Salva apenas o Tenant
         await _unityOfWork.Commit();
 
-        // 🔹 Agora cria o histórico do plano (Tenant já existe no banco)
         var planHistory = new Domain.Entities.PlanHistory
         {
             Id = Guid.NewGuid(),
@@ -72,10 +68,8 @@ public class RegisterTenantUseCase : IRegisterTenantUseCase
 
         await _planHistoryWriteOnlyRepository.Add(planHistory);
 
-        // 🔹 Atualiza a referência do tenant ao histórico atual
         tenant.CurrentPlanHistoryId = planHistory.Id;
 
-        // ✅ SEGUNDO COMMIT: Salva o histórico e atualiza o tenant
         await _unityOfWork.Commit();
 
         return new ResponseRegisterTenantJson
@@ -111,7 +105,7 @@ public class RegisterTenantUseCase : IRegisterTenantUseCase
     /// <summary>
     /// Valida o formato do request (FluentValidation) e regras de negócio (ex: email).
     /// </summary>
-    private async Task ValidateBusinessRules(RequestRegisterTenantJson request)
+    private async Task Validate(RequestRegisterTenantJson request)
     {
         var validator = new RegisterTenantValidator();
         var result = validator.Validate(request);

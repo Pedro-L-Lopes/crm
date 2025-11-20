@@ -14,7 +14,7 @@ public class UserController : CRMBaseController
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseRegisterUserJson), StatusCodes.Status201Created)]
-    [AuthorizedByRole(Role.owner, Role.admin)]
+    [AuthorizedByRole(Role.superAdmin, Role.owner, Role.admin)]
     public async Task<IActionResult> Register([FromBody]RequestRegisterUserJson request, [FromServices] IRegisterUserUseCase useCase)
     {
        

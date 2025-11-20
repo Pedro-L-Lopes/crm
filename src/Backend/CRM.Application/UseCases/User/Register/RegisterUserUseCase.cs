@@ -1,6 +1,9 @@
-﻿using CRM.Application.UseCases.User.Register;
+﻿using CRM.Application.Services;
+using CRM.Application.Services.Validator;
+using CRM.Application.UseCases.User.Register;
 using CRM.Communication.Requests;
 using CRM.Communication.Responses;
+using CRM.Domain.Enums;
 using CRM.Domain.Repositories;
 using CRM.Domain.Repositories.Plan;
 using CRM.Domain.Repositories.Tenant;
@@ -22,14 +25,17 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly IUnityOfWork _unityOfWork;
     private readonly IPasswordEncripter _passwordEncripter;
     private readonly IAccessTokenGenerator _accessToken;
+    private readonly IRoleValidator _roleValidator;
 
-    public RegisterUserUseCase(IUserWriteOnlyRepository writeOnlyRepository, 
-                               IUserReadOnlyRepository readOnlyRepository,
-                               IUnityOfWork unityOfWork, 
-                               IPasswordEncripter passwordEncripter,
-                               ITenantReadOnlyRepository readOnlyTenantRepository,
-                               IAccessTokenGenerator accessToken,
-                               IPlanReadOnlyRepository readOnlyPlanRepository)
+    public RegisterUserUseCase(
+        IUserWriteOnlyRepository writeOnlyRepository,
+        IUserReadOnlyRepository readOnlyRepository,
+        IUnityOfWork unityOfWork,
+        IPasswordEncripter passwordEncripter,
+        ITenantReadOnlyRepository readOnlyTenantRepository,
+        IAccessTokenGenerator accessToken,
+        IPlanReadOnlyRepository readOnlyPlanRepository,
+        IRoleValidator roleValidator)
     {
         _writeOnlyRepository = writeOnlyRepository;
         _readOnlyRepository = readOnlyRepository;
@@ -38,21 +44,29 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         _readOnlyTenantRepository = readOnlyTenantRepository;
         _accessToken = accessToken;
         _readOnlyPlanRepository = readOnlyPlanRepository;
+        _roleValidator = roleValidator;
     }
 
     public async Task<ResponseRegisterUserJson> Execute(RequestRegisterUserJson request)
     {
+        var (currentUserId, currentTenantId, currentRole) = await _roleValidator.GetUserContextAsync();
 
-        await Validate(request);
+        var targetTenantId = DetermineTargetTenant(request.TenantId, currentTenantId, currentRole);
 
-        var tenant = await _readOnlyTenantRepository.GetTenantById(request.TenantId);
+        await Validate(request, targetTenantId);
+
+        var tenant = await _readOnlyTenantRepository.GetTenantById(targetTenantId);
+
+        if (tenant == null)
+            throw new CRMException(ResourceMessageException.INVALID_TENANT_OR_INACTIVE);
 
         if (tenant.PlanId == Guid.Empty)
-            throw new ErrorOnValidationException(["Tenant não possui plano ativo."]);
+            throw new CRMException(ResourceMessageException.INVALID_TENANT_OR_INACTIVE);
 
         var user = request.Adapt<Domain.Entities.User>();
         user.Password = _passwordEncripter.Encrypt(request.Password);
         user.Id = Guid.NewGuid();
+        user.TenantId = targetTenantId;
 
         var plan = await _readOnlyPlanRepository.GetPlanById(tenant.PlanId);
 
@@ -75,28 +89,53 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         };
     }
 
-    private async Task Validate(RequestRegisterUserJson request)
+    /// <summary>
+    /// Determina qual tenant será usado:
+    /// - SuperAdmin: pode escolher qualquer tenant (usa o do request)
+    /// - Owner/Admin: sempre usa o próprio tenant (ignora o do request)
+    /// </summary>
+    private Guid DetermineTargetTenant(Guid requestTenantId, Guid currentTenantId, Role currentRole)
+    {
+        // SuperAdmin pode criar em qualquer tenant
+        if (_roleValidator.CanModifyField(currentRole, "User", "TenantId"))
+        {
+            if (requestTenantId == Guid.Empty)
+            {
+                throw new CRMException(ResourceMessageException.INVALID_TENANT_OR_INACTIVE);
+            }
+
+            return requestTenantId;
+        }
+
+        return currentTenantId;
+    }
+
+    private async Task Validate(RequestRegisterUserJson request, Guid tenantIdToValidate)
     {
         var validator = new RegisterUserValidator();
-
         var result = validator.Validate(request);
 
-        var tenantExists = await _readOnlyTenantRepository.ExistActiveTenant(request.TenantId);
+        var tenantExists = await _readOnlyTenantRepository.ExistActiveTenant(tenantIdToValidate);
+
         if (!tenantExists)
         {
-            result.Errors.Add(new FluentValidation.Results.ValidationFailure(nameof(request.TenantId), ResourceMessageException.INVALID_TENANT));
+            result.Errors.Add(new FluentValidation.Results.ValidationFailure(
+                nameof(request.TenantId),
+                ResourceMessageException.INVALID_TENANT));
         }
 
         var emailExist = await _readOnlyRepository.ExistActiveUserWithEmail(request.Email);
+
         if (emailExist)
         {
-            result.Errors.Add(new FluentValidation.Results.ValidationFailure(string.Empty, ResourceMessageException.EMAIL_ALREDY_REGISTERED));
+            result.Errors.Add(new FluentValidation.Results.ValidationFailure(
+                string.Empty,
+                ResourceMessageException.EMAIL_ALREDY_REGISTERED));
         }
 
-        if (result.IsValid == false)
+        if (!result.IsValid)
         {
             var errorMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
-
             throw new ErrorOnValidationException(errorMessages);
         }
     }

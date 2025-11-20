@@ -1,12 +1,9 @@
 ﻿using CRM.Domain.Entities;
-using CRM.Domain.Services.LoggedUser;
-using Microsoft.EntityFrameworkCore;
-using CRM.Domain.Entities;
 using CRM.Domain.Security.Tokens;
 using CRM.Domain.Services.LoggedUser;
 using CRM.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
 namespace CRM.Infrastructure.Services.LoggedUser;
 
