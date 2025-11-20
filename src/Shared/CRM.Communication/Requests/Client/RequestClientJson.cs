@@ -15,7 +15,7 @@ public class RequestClientJson
     public string Document { get; set; } = null!;
     public string? SecondDocument { get; set; }
 
-    public ClientType Type { get; set; }
+    public string? Type { get; set; }
     public string? Notes { get; set; }
 
     public DateTime? BirthDate { get; set; }

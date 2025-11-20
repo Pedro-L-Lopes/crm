@@ -1,4 +1,11 @@
 ﻿using CRM.Application.Services.Mappings;
+using CRM.Application.Services.Validator;
+using CRM.Application.UseCases.Client.Delete;
+using CRM.Application.UseCases.Client.GetClient;
+using CRM.Application.UseCases.Client.GetClientsPaged;
+using CRM.Application.UseCases.Client.Register;
+using CRM.Application.UseCases.Client.UpdateAgent;
+using CRM.Application.UseCases.Client.UpdateClient;
 using CRM.Application.UseCases.Login.DoLogin;
 using CRM.Application.UseCases.Plan.Get;
 using CRM.Application.UseCases.Plan.Register;
@@ -21,6 +28,7 @@ public static class DependencyInjectionExtension
     {
         AddMapperConfigurations(services);
         AddUseCases(services);
+        AddServices(services);
         //AddTokenService(services);
     }
 
@@ -30,6 +38,11 @@ public static class DependencyInjectionExtension
         var config = TypeAdapterConfig.GlobalSettings;
         services.AddSingleton(config);
         services.AddScoped<IMapper, Mapper>();
+    }
+
+    private static void AddServices(IServiceCollection services)
+    {
+        services.AddScoped<IRoleValidator, RoleValidator>();
     }
 
     private static void AddUseCases(IServiceCollection services)
@@ -54,6 +67,13 @@ public static class DependencyInjectionExtension
         // PLAN HISTORY
         services.AddScoped<IRegisterPlanHistoryUseCase, RegisterPlanHistoryUseCase>();
 
+        // CLIENT
+        services.AddScoped<IRegisterClientUseCase, RegisterClientUseCase>();
+        services.AddScoped<IGetClientsPagedUseCase, GetClientsPagedUseCase>();
+        services.AddScoped<IGetClientsUseCase, GetClientsUseCase>();
+        services.AddScoped<IUpdateClientUseCase, UpdateClientUseCase>();
+        services.AddScoped<IDeleteClientUseCase, DeleteClientUseCase>();
+        services.AddScoped<IUpdateClientAgentUseCase, UpdateClientAgentUseCase>();
 
     }
 

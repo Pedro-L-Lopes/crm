@@ -1,4 +1,5 @@
 ﻿using CRM.Domain.Repositories;
+using CRM.Domain.Repositories.Client;
 using CRM.Domain.Repositories.Plan;
 using CRM.Domain.Repositories.PlanHistory;
 using CRM.Domain.Repositories.Tenant;
@@ -64,6 +65,11 @@ public static class DependencyInjectionExtension
         // PLAN HISTORY
         services.AddScoped<IPlanHistoryReadOnlyRepository, PlanHistoryRepository>();
         services.AddScoped<IPlanHistoryWriteOnlyRepository, PlanHistoryRepository>();
+
+        // CLIENT
+        services.AddScoped<IClientReadOnlyRepository, ClientRepository>();
+        services.AddScoped<IClientWriteOnlyRepository, ClientRepository>();
+        services.AddScoped<IClientUpdateOnlyRepository, ClientRepository>();
     }
 
     private static void AddFluentMigrator_MySql(IServiceCollection services, IConfiguration configuration)

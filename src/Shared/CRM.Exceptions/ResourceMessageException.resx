@@ -291,10 +291,22 @@
   <data name="LINK_INVALID" xml:space="preserve">
     <value>Link empty</value>
   </data>
+  <data name="STATUS_EMPTY" xml:space="preserve">
+    <value>Status cannot be empty</value>
+  </data>
+  <data name="INVALID_TENANT_OR_INACTIVE" xml:space="preserve">
+    <value>Invalid or inactive organization</value>
+  </data>
+  <data name="CLIENT_ALREDY_EXISTS" xml:space="preserve">
+    <value>Client alredy exists with this document</value>
+  </data>
+  <data name="CLIENT_NOT_FOUND" xml:space="preserve">
+    <value>Client not found</value>
+  </data>
   <data name="CLIENT_ID_EMPTY" xml:space="preserve">
     <value>ClientId cannot be empty</value>
   </data>
-  <data name="STATUS_EMPTY" xml:space="preserve">
-    <value>Status cannot be empty</value>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>User not found or disabled.</value>
   </data>
 </root>

@@ -291,11 +291,22 @@
   <data name="LINK_INVALID" xml:space="preserve">
     <value>O link deve ser uma URL válida</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CLIENT_ID_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
   <data name="STATUS_EMPTY" xml:space="preserve">
     <value>Defina um status valido</value>
+  </data>
+  <data name="INVALID_TENANT_OR_INACTIVE" xml:space="preserve">
+    <value>Organização inválida ou inativa</value>
+  </data>
+  <data name="CLIENT_ALREDY_EXISTS" xml:space="preserve">
+    <value>Cliente já cadastrado com este documento</value>
+  </data>
+  <data name="CLIENT_NOT_FOUND" xml:space="preserve">
+    <value>Cliente não encontrado</value>
+  </data>
+  <data name="CLIENT_ID_EMPTY" xml:space="preserve">
+    <value>Selecione um cliente</value>
+  </data>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>Usuário não encontrado ou desativado</value>
   </data>
 </root>

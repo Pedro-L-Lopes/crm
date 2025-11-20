@@ -292,10 +292,22 @@
   <data name="LINK_INVALID" xml:space="preserve">
     <value>Link must be a valid URL</value>
   </data>
+  <data name="STATUS_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="INVALID_TENANT_OR_INACTIVE" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CLIENT_ALREDY_EXISTS" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CLIENT_NOT_FOUND" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="CLIENT_ID_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="STATUS_EMPTY" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="USER_NOT_FOUND" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
 </root>

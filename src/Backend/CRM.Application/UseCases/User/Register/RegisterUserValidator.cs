@@ -37,6 +37,7 @@ public class RegisterUserValidator : AbstractValidator<RequestRegisterUserJson>
             .NotEmpty()
             .WithMessage(ResourceMessageException.ROLE_REQUIRED)
             .Must(role =>
+                role == "superadmin" ||
                 role == "owner" ||
                 role == "admin" ||
                 role == "manager" ||
