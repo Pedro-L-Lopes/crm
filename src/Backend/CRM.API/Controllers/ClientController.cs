@@ -1,18 +1,14 @@
-﻿using Azure.Core;
-using CRM.API.Attributes;
+﻿using CRM.API.Attributes;
 using CRM.Application.UseCases.Client.Delete;
 using CRM.Application.UseCases.Client.GetClient;
 using CRM.Application.UseCases.Client.GetClientsPaged;
 using CRM.Application.UseCases.Client.Register;
+using CRM.Application.UseCases.Client.SoftDelete;
 using CRM.Application.UseCases.Client.UpdateAgent;
 using CRM.Application.UseCases.Client.UpdateClient;
-using CRM.Application.UseCases.User.Profile;
-using CRM.Application.UseCases.User.Register;
-using CRM.Communication.Requests;
 using CRM.Communication.Requests.Client;
 using CRM.Communication.Responses;
 using CRM.Communication.Responses.Client;
-using CRM.Domain.Entities;
 using CRM.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 
@@ -104,6 +100,26 @@ public class ClientController : CRMBaseController
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(
        [FromServices] IDeleteClientUseCase useCase,
+       [FromRoute] Guid id)
+    {
+        await useCase.Execute(id);
+
+        return NoContent();
+    }
+
+    /// <summary>
+    /// Desativa um cliente pelo id
+    /// </summary>
+    /// <param name="useCase">Caso de uso para desativar cliente</param>
+    /// <param name="id">ID do cliente</param>
+    /// <response code="204">Cliente desativado com sucesso</response>
+    /// <response code="404">Cliente não encontrado</response>
+    [HttpPatch]
+    [Route("disable/{id}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> DisableClient(
+       [FromServices] ISoftDeleteClientUseCase useCase,
        [FromRoute] Guid id)
     {
         await useCase.Execute(id);

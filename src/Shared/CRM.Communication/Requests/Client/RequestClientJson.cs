@@ -1,4 +1,4 @@
-﻿using CRM.Domain.Enums;
+﻿using CRM.Communication.Requests.Address;
 
 namespace CRM.Communication.Requests.Client;
 
@@ -22,4 +22,6 @@ public class RequestClientJson
     public string? Occupation { get; set; }
     public decimal? Income { get; set; }
     public string? Gender { get; set; }
+
+    public RequestAddressJson? Address { get; set; }
 }

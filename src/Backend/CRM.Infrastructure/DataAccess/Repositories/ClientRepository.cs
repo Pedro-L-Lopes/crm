@@ -49,7 +49,7 @@ public class ClientRepository : IClientReadOnlyRepository, IClientWriteOnlyRepos
     {
         return await _dbContext.Clients
         .Include(client => client.Address)
-        .FirstOrDefaultAsync(client => client.Id == clientId && !client.IsDeleted && client.TenantId == loggedUser.TenantId);
+        .FirstOrDefaultAsync(client => client.Id == clientId && client.IsDeleted == false && client.TenantId == loggedUser.TenantId);
     }
 
     public async Task<PagedResult<Client>> GetPaged(ClientQueryParams queryParams)
@@ -79,6 +79,20 @@ public class ClientRepository : IClientReadOnlyRepository, IClientWriteOnlyRepos
     }
 
     public void Update(Client client) => _dbContext.Clients.Update(client);
+
+    public async Task SoftDelete(Guid clientId)
+    {
+        var client = await _dbContext.Clients.FindAsync(clientId);
+
+        if (client is null)
+            return;
+
+        client.IsDeleted = true;
+        client.UpdatedAt = DateTime.UtcNow;
+
+        _dbContext.Clients.Update(client);
+    }
+
 
     public async Task Delete(Guid id)
     {
@@ -137,6 +151,4 @@ public class ClientRepository : IClientReadOnlyRepository, IClientWriteOnlyRepos
             ? query.OrderByDescending(sortExpression)
             : query.OrderBy(sortExpression);
     }
-
-    
 }

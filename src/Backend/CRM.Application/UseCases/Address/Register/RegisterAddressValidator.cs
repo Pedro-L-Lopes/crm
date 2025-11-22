@@ -2,11 +2,11 @@
 using CRM.Exceptions;
 using FluentValidation;
 
-namespace CRM.Application.UseCases.Address;
+namespace CRM.Application.UseCases.Address.Register;
 
-public class AddressValidator : AbstractValidator<RequestAddressJson>
+public class RegisterAddressValidator : AbstractValidator<RequestAddressJson>
 {
-    public AddressValidator()
+    public RegisterAddressValidator()
     {
         RuleFor(a => a.TenantId)
             .NotEmpty()

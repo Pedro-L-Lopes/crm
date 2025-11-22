@@ -14,7 +14,7 @@ public class CRMDbContext : DbContext
     public DbSet<Client> Clients { get; set; }
     public DbSet<Property> Properties { get; set; }
     public DbSet<PropertyPublication> PropertyPublications { get; set; }
-    public DbSet<PropertyVisit> propertyVisits { get; set; }
+    public DbSet<PropertyVisit> PropertyVisits { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

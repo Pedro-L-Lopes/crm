@@ -4,6 +4,7 @@ using CRM.Application.UseCases.Client.Delete;
 using CRM.Application.UseCases.Client.GetClient;
 using CRM.Application.UseCases.Client.GetClientsPaged;
 using CRM.Application.UseCases.Client.Register;
+using CRM.Application.UseCases.Client.SoftDelete;
 using CRM.Application.UseCases.Client.UpdateAgent;
 using CRM.Application.UseCases.Client.UpdateClient;
 using CRM.Application.UseCases.Login.DoLogin;
@@ -73,7 +74,11 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetClientsUseCase, GetClientsUseCase>();
         services.AddScoped<IUpdateClientUseCase, UpdateClientUseCase>();
         services.AddScoped<IDeleteClientUseCase, DeleteClientUseCase>();
+        services.AddScoped<ISoftDeleteClientUseCase, SoftDeleteClientUseCase>();
         services.AddScoped<IUpdateClientAgentUseCase, UpdateClientAgentUseCase>();
+
+        // ADDRESS
+
 
     }
 
