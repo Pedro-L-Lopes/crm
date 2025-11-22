@@ -37,7 +37,7 @@ public class GetClientsUseCase : IGetClientsUseCase
 
         if (client is null)
         {
-            throw new CRMException(ResourceMessageException.CLIENT_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.CLIENT_NOT_FOUND);
         }
 
         return client;

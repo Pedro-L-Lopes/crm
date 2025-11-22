@@ -42,11 +42,11 @@ public class UpdateClientAgentUseCase : IUpdateClientAgentUseCase
 
         var user = await _userReadOnlyRepository.GetUserByIdentifier(agentId);
         if (user is null)
-            throw new CRMException(ResourceMessageException.USER_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.USER_NOT_FOUND);
 
         var client = await _clientUpdateOnlyRepository.GetClient(loggedUser, Guid.Parse(clientId));
         if (client is null)
-            throw new CRMException(ResourceMessageException.CLIENT_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.CLIENT_NOT_FOUND);
 
         _clientUpdateOnlyRepository.UpdateAgent(client, agentId);
         await _unityOfWork.Commit();

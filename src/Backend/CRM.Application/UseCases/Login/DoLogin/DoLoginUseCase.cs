@@ -40,7 +40,7 @@ public class DoLoginUseCase : IDoLoginUseCase
         var tenant = await _readOnlyTenantRepository.GetTenantById(user.TenantId);
 
         if (tenant.PlanId == Guid.Empty)
-            throw new ErrorOnValidationException(new List<string> { ResourceMessageException.INACTIVE_PLAN });
+            throw new CRMException(ResourceMessageException.INACTIVE_PLAN);
 
         var plan = await _readOnlyPlanRepository.GetPlanById(tenant.PlanId);
 

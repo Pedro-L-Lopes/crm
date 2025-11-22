@@ -42,7 +42,7 @@ public class UpdateClientUseCase : IUpdateClientUseCase
         var client = await _clientUpdateOnlyRepository.GetClient(loggedUser, clientId);
 
         if (client is null)
-            throw new CRMException(ResourceMessageException.CLIENT_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.CLIENT_NOT_FOUND);
 
         client.Name = request.Name;
         client.Email = request.Email;

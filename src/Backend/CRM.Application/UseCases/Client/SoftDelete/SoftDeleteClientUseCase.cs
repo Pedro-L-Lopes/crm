@@ -29,7 +29,7 @@ public class SoftDeleteClientUseCase : ISoftDeleteClientUseCase
         var client = await _updateRepository.GetClient(user, clientId);
 
         if (client is null)
-            throw new CRMException(ResourceMessageException.CLIENT_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.CLIENT_NOT_FOUND);
 
         await _updateRepository.SoftDelete(clientId);
         await _unityOfWork.Commit();

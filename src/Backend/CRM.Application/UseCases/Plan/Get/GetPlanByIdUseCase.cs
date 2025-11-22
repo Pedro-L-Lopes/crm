@@ -26,7 +26,7 @@ public class GetPlanByIdUseCase : IGetPlanByIdUseCase
 
         if (plan is null)
         {
-            throw new ErrorOnValidationException(new List<string> { ResourceMessageException.PLAN_NOT_FOUND_OR_INACTIVE });
+            throw new CRMException(ResourceMessageException.PLAN_NOT_FOUND_OR_INACTIVE);
         }
 
         return plan;

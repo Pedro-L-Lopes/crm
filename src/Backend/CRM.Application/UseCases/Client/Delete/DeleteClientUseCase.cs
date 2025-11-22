@@ -34,7 +34,7 @@ public class DeleteClientUseCase : IDeleteClientUseCase
         var client = await _readOnlyRepository.GetClient(loggedUser, id);
 
         if (client is null)
-            throw new CRMException(ResourceMessageException.CLIENT_NOT_FOUND);
+            throw new NotFoundException(ResourceMessageException.CLIENT_NOT_FOUND);
 
         await _writeOnlyRepository.Delete(id);
 
