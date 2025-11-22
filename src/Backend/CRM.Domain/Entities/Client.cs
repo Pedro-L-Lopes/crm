@@ -6,7 +6,7 @@ namespace CRM.Domain.Entities;
 public class Client : EntityBase
 {
     public Guid TenantId { get; set; }
-    public Guid AgentId { get; set; }
+    public Guid? AgentId { get; set; }
     public Guid? AddressId { get; set; }
 
     public string Name { get; set; } = null!;

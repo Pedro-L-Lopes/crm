@@ -42,5 +42,25 @@ public class RegisterClientValidator : AbstractValidator<RequestClientJson>
         RuleFor(c => c.AgentId)
             .NotEmpty()
             .WithMessage(ResourceMessageException.AGENT_EMPTY);
+
+        //RuleFor(c => c.Address.ZipCode)
+        //    .NotEmpty()
+        //    .WithMessage(ResourceMessageException.ZIPCODE_EMPTY);
+
+        //RuleFor(c => c.Address.Street)
+        //    .NotEmpty()
+        //    .WithMessage(ResourceMessageException.STREET_EMPTY);
+
+        //RuleFor(c => c.Address.Neighborhood)
+        //    .NotEmpty()
+        //    .WithMessage(ResourceMessageException.STREET_EMPTY);
+
+        //RuleFor(c => c.Address.City)
+        //    .NotEmpty()
+        //    .WithMessage(ResourceMessageException.CITY_EMPTY);
+
+        //RuleFor(c => c.Address.State)
+        //    .NotEmpty()
+        //    .WithMessage(ResourceMessageException.STATE_EMPTY);
     }
 }
