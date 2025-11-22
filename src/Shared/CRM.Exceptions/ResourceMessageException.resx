@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCOUNT_TYPE_EMPTY" xml:space="preserve">
+    <value>Account type is required</value>
+  </data>
+  <data name="ACCOUNT_TYPE_INVALID" xml:space="preserve">
+    <value>The user type must be 'individual', 'agent', or 'agency</value>
+  </data>
+  <data name="AMOUNT_PAID_NEGATIVE" xml:space="preserve">
+    <value>Amount paid cannot be negative.</value>
+  </data>
+  <data name="BILLING_CYCLE_INVALID" xml:space="preserve">
+    <value>Billing cycle is invalid.</value>
+  </data>
+  <data name="CITY_EMPTY" xml:space="preserve">
+    <value>City cannot be empty</value>
+  </data>
+  <data name="CONFIRM_PASSWORD_MATCH" xml:space="preserve">
+    <value>The passwords do not match.</value>
+  </data>
+  <data name="CONFIRM_PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Confirm password is required</value>
+  </data>
+  <data name="EMAIL_ALREDY_REGISTERED" xml:space="preserve">
+    <value>E-mail alredy registered</value>
+  </data>
+  <data name="EMAIL_EMPTY" xml:space="preserve">
+    <value>The e-mail cannot be empty</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>The e-mail address invalid</value>
+  </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>E-mail or password invalid</value>
+  </data>
+  <data name="END_DATE_AFTER_START_DATE" xml:space="preserve">
+    <value>End date must be after the start date.</value>
+  </data>
+  <data name="END_DATE_REQUIRED" xml:space="preserve">
+    <value>End date is required.</value>
+  </data>
+  <data name="GENDER_EMPTY" xml:space="preserve">
+    <value>The gender cannot be empty</value>
+  </data>
+  <data name="GENDER_INVALID" xml:space="preserve">
+    <value>Invalid gender</value>
+  </data>
+  <data name="INACTIVE_PLAN" xml:space="preserve">
+    <value>Inactive plan</value>
+  </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="INVALID_TENANT" xml:space="preserve">
+    <value>Invalid organization</value>
+  </data>
+  <data name="INVOICE_URL_MAX_LENGTH_EXCEEDED" xml:space="preserve">
+    <value>Invoice URL must be at most 255 characters long.</value>
+  </data>
+  <data name="NAME_EMPTY" xml:space="preserve">
+    <value>The name cannot be empty</value>
+  </data>
+  <data name="NAME_LENGTH" xml:space="preserve">
+    <value>The name cannot have fewer than 3 characters and cannot have more than 50.</value>
+  </data>
+  <data name="NEIGHBORHOOD" xml:space="preserve">
+    <value>Neighborhood cannot be empty</value>
+  </data>
+  <data name="NEIGHBORHOO_EMPTY" xml:space="preserve">
+    <value>Neighborhood cannot be empty</value>
+  </data>
+  <data name="NO_TOKEN" xml:space="preserve">
+    <value>No access token</value>
+  </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>Password different of current password</value>
+  </data>
+  <data name="PASSWORD_EMPTY" xml:space="preserve">
+    <value>Password empty</value>
+  </data>
+  <data name="PASSWORD_LENGTH" xml:space="preserve">
+    <value>The password must be at least 6 characters long.</value>
+  </data>
+  <data name="PASSWORD_REQUIRED" xml:space="preserve">
+    <value>The password is required</value>
+  </data>
+  <data name="PASSWORD_RULE_1" xml:space="preserve">
+    <value>The password must contain at least one uppercase letter.</value>
+  </data>
+  <data name="PASSWORD_RULE_2" xml:space="preserve">
+    <value>The password must contain at least one lowercase letter.</value>
+  </data>
+  <data name="PASSWORD_RULE_3" xml:space="preserve">
+    <value>The password must contain at least one number.</value>
+  </data>
+  <data name="PAYMENT_METHOD_INVALID" xml:space="preserve">
+    <value>Payment method is invalid.</value>
+  </data>
+  <data name="PAYMENT_STATUS_INVALID" xml:space="preserve">
+    <value>Payment status is invalid.</value>
+  </data>
+  <data name="PHONE_EMPTY" xml:space="preserve">
+    <value>The phone number cannot be empty</value>
+  </data>
+  <data name="PHONE_INVALID" xml:space="preserve">
+    <value>Phone invalid</value>
+  </data>
+  <data name="PHONE_MAX_LENTH" xml:space="preserve">
+    <value>The number cannot have more than 14 digits.</value>
+  </data>
+  <data name="PLAN_ID_EMPTY" xml:space="preserve">
+    <value>The selected plan is required</value>
+  </data>
+  <data name="PLAN_NOT_FOUND_OR_INACTIVE" xml:space="preserve">
+    <value>Plan not found or inative</value>
+  </data>
+  <data name="PLAN_STATUS_INVALID" xml:space="preserve">
+    <value>Plan status is invalid.</value>
+  </data>
+  <data name="ROLE_MUST_BE" xml:space="preserve">
+    <value>The role must be one of the following: 'owner', 'admin', 'manager', 'agent', 'client', 'financial', or 'assistant'.</value>
+  </data>
+  <data name="ROLE_REQUIRED" xml:space="preserve">
+    <value>The role is required</value>
+  </data>
+  <data name="START_DATE_REQUIRED" xml:space="preserve">
+    <value>Start date is required.</value>
+  </data>
+  <data name="STREET_EMPTY" xml:space="preserve">
+    <value>Street cannot be empty</value>
+  </data>
+  <data name="TENANT_REQUIRED" xml:space="preserve">
+    <value>The user needs to be associated with a tenant.</value>
+  </data>
+  <data name="UNKNOW_ERROR" xml:space="preserve">
+    <value>Unknow error</value>
+  </data>
+  <data name="USER_WITHOUT_PERMISSION_ACCESS_RESOURCE" xml:space="preserve">
+    <value>User without permission to access this resource</value>
+  </data>
+  <data name="ZIPCODE_EMPTY" xml:space="preserve">
+    <value>ZipCode cannot be empty</value>
+  </data>
+  <data name="STATE_EMPTY" xml:space="preserve">
+    <value>State cannot be empty</value>
+  </data>
+  <data name="DOCUMENT_EMPTY" xml:space="preserve">
+    <value>Document cannot be empty</value>
+  </data>
+  <data name="CLIENT_TYPE_EMPTY" xml:space="preserve">
+    <value>Invalid client type</value>
+  </data>
+  <data name="AGENT_EMPTY" xml:space="preserve">
+    <value>AgentI cannot be empty</value>
+  </data>
+  <data name="PROPERTY_TYPE_EMPTY" xml:space="preserve">
+    <value>Property type cannot be empty</value>
+  </data>
+  <data name="PROPERTY_PURPOSE_EMPTY" xml:space="preserve">
+    <value>Purpose cannot be empty</value>
+  </data>
+  <data name="PROPERTY_STATUS_EMPTY" xml:space="preserve">
+    <value>Status cannot be empty</value>
+  </data>
+  <data name="PRICE_INVALID" xml:space="preserve">
+    <value>Price must be greater than zero</value>
+  </data>
+  <data name="PROPERTY_ID_EMPTY" xml:space="preserve">
+    <value>PropertyId cannot be empty</value>
+  </data>
+  <data name="PLATFORM_EMPTY" xml:space="preserve">
+    <value>Platform cannot be empty</value>
+  </data>
+  <data name="LINK_INVALID" xml:space="preserve">
+    <value>Link empty</value>
+  </data>
+  <data name="STATUS_EMPTY" xml:space="preserve">
+    <value>Status cannot be empty</value>
+  </data>
+  <data name="INVALID_TENANT_OR_INACTIVE" xml:space="preserve">
+    <value>Invalid or inactive organization</value>
+  </data>
+  <data name="CLIENT_ALREDY_EXISTS" xml:space="preserve">
+    <value>Client alredy exists with this document</value>
+  </data>
+  <data name="CLIENT_NOT_FOUND" xml:space="preserve">
+    <value>Client not found</value>
+  </data>
+  <data name="CLIENT_ID_EMPTY" xml:space="preserve">
+    <value>ClientId cannot be empty</value>
+  </data>
+  <data name="USER_NOT_FOUND" xml:space="preserve">
+    <value>User not found or disabled.</value>
+  </data>
+</root>
